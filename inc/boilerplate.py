@@ -70,18 +70,18 @@ class boilerplate(Builder):
         packageZipContents = open(packageZipPath, 'wb+')
         
         progressBar = None
-        if (not this.executor.args.quiet):
+        if (this.executor.verbosity >= 2):
             progressBar = tqdm(total=packageSize, unit='iB', unit_scale=True)
 
         for chunk in packageQuery.iter_content(chunkSize):
             packageZipContents.write(chunk)
-            if (not this.executor.args.quiet):
+            if (this.executor.verbosity >= 2):
                 progressBar.update(len(chunk))
         
-        if (not this.executor.args.quiet):
+        if (this.executor.verbosity >= 2):
             progressBar.close()
 
-        if (packageSize and not this.executor.args.quiet and progressBar.n != packageSize):
+        if (packageSize and this.executor.verbosity >= 2 and progressBar.n != packageSize):
             logging.error(f"Package wrote {progressBar.n} / {packageSize} bytes")
             raise OtherBuildError("Github workflows package not fully written.")
         
