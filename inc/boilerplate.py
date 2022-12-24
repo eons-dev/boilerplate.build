@@ -48,9 +48,9 @@ class boilerplate(Builder):
     # Create .github/workflows folder
     # Code copied from eons. TODO: Consider consolidating upstream.
     def SetupWorkflows(this):
-        packageZipPath = "./tmp/part_ebbs-workflows-main.zip"
+        packageZipPath = "./tmp/ebbs.workflows.part-main.zip"
 
-        url = "https://github.com/eons-dev/part_ebbs-workflows/archive/refs/heads/main.zip"
+        url = "https://github.com/eons-dev/ebbs.workflows.part/archive/refs/heads/main.zip"
 
         headers = {
             "Connection": "keep-alive",
@@ -96,7 +96,7 @@ class boilerplate(Builder):
         openArchive.extractall(f"{extractLoc}")
         openArchive.close()
         #zip will be deleted in Cleanup()
-        os.rename("./.github/part_ebbs-workflows-main", "./.github/workflows")
+        os.rename("./.github/ebbs.workflows.part-main", "./.github/workflows")
 
 
     # Create /build folder
