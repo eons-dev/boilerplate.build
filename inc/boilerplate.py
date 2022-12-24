@@ -6,7 +6,6 @@ from tqdm import tqdm
 from zipfile import ZipFile
 from pathlib import Path
 from ebbs import Builder, OtherBuildError
-from eot import EOT
 
 # Class name is what is used at cli, so we defy convention here in favor of ease-of-use.
 class boilerplate(Builder):
