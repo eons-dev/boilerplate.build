@@ -32,7 +32,7 @@ class boilerplate(Builder):
     def SetupCommonFolders(this):
         paths = [
             '.github',
-            'bin',
+            'exe',
             'build',
             'build/config',
             'inc',

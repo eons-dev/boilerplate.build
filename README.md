@@ -11,12 +11,10 @@ The goal in using this setup is:
 
 Getting started with this boilerplate is easy: just run:
 ```
-ebbs -b boilerplate
+ebbs -b boilerplate --name "name_of_project" --type "type_of_project"
 ```
 from your, preferably empty, repository.
 
-If you're not using [eons naming conventions](https://eons.llc/convention/naming), you can specify a name and type with: `ebbs -b boilerplate --name "name_of_project" --type "type_of_project"`.
-
-Here, `name` is what you'd like to call your codebase and `type` is how you'd like to treat that codebase. For example a `type` of `py` might mean you run `pytest` before publishing to PyPI, while setting `type` to `cpp` might mean you build your code with many different toolchains.
+Here, `name` is what you'd like to call your codebase and `type` is how you'd like to treat that codebase. For example a `type` of `exe` might mean you intend to publish a standalone executable to some repository, while a `type` of `lib` might mean your code should be consumed by other `lib`s and `exe`s but is not meant to be run on its own.
 
 **NOTE: This will not create your repository for you (i.e. the .git folder is not touched).**
