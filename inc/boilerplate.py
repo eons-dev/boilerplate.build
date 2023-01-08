@@ -198,4 +198,5 @@ build/**/
     # Remove whatever this created
     def Cleanup(this):
         shutil.rmtree('./tmp')
-        shutil.rmtree('./eons')
+        if (Path('./eons').exists()):
+            shutil.rmtree('./eons')
